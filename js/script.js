@@ -94,7 +94,6 @@ if (isValid){
 
 const userTicketPrice = userKm * kmPrice;
 
-console.log(userTicketPrice);
 
 // 8-Applico eventuali sconti
 
