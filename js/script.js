@@ -97,7 +97,7 @@ const userTicketPrice = userKm * kmPrice;
 
 // 8-Applico eventuali sconti
 
-let saleTicketPrice;
+let saleTicketPrice = userTicketPrice;
 
 if (userAge >= 65){
     saleTicketPrice = userTicketPrice - ( userTicketPrice * elderlySale) / 100;
