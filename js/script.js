@@ -30,6 +30,12 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 const ticket = document.getElementById('ticketprice');
 
+//BONUS
+
+const nosale = document.getElementById('nosale');
+const km = document.getElementById('km');
+const age = document.getElementById('age');
+
 
 
 // 2-Creo costante con prezzo al km
@@ -72,6 +78,8 @@ if (isNaN(userKm) || userKm < 1 ){
 }
 
 
+
+
 if (isNaN(userAge) || userAge < 1 || userAge > 120){
     isValid = false;
     alert ('Inserisci età valida');
@@ -85,6 +93,10 @@ if (isValid){
 // 7-Calcolo costo
 
 let userTicketPrice = userKm * kmPrice ;
+
+//BONUS STAMP
+
+nosale.innerText = `Il tuo prezzo senza sconto era: ${userTicketPrice.toFixed(2)} €`;
 
 // 8-Applico eventuali sconti
 
@@ -103,8 +115,11 @@ userTicketPrice= userTicketPrice.toFixed(2);
 
 // 9-stampo a video
 
-const message = `Il costo del tuo biglietto è ${userTicketPrice} €`;
+const message = `Il costo finale del tuo biglietto è ${userTicketPrice} €`;
 
 ticket.innerText = message;
+
+age.innerText = ` Eta inserita: ${userAge}`;
+km.innerText = ` Km inseriti: ${userKm}`;
 
 }
