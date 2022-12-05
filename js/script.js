@@ -30,37 +30,37 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 const ticket = document.getElementById('ticketprice');
 
-console.log (ticketprice);
+
 
 // 2-Creo costante con prezzo al km
 
 const kmPrice = 0.21;
 
-console.log(kmPrice);
+
 
 // 3-Creo costante sconto minorenni
 
 const underageSale = 20;
 
-console.log(underageSale);
+
 
 // 4-Creo costante sconto over 65
 
 const elderlySale = 40;
 
-console.log(elderlySale);
+
 
 // 5-Chiedo all'utente i chilometri da percorrere e li metto in una variabile
 
 const userKm = parseInt(prompt('Quanti chilometri devi percorrere?', '120').trim());
 
-console.log(userKm);
+
 
 // 6-Chiedo all'utente gli anni e li metto in una variabile
 
 const userAge = parseInt(prompt('Quanti anni hai?', '15').trim());
 
-console.log(userAge);
+
 
 //VALIDAZIONE
 
@@ -80,17 +80,11 @@ if (isNaN(userAge) || userAge < 1 || userAge > 120){
 
 
 
-
-
-
-
 if (isValid){
 
 // 7-Calcolo costo
 
 let userTicketPrice = userKm * kmPrice ;
-
-console.log(userTicketPrice);
 
 // 8-Applico eventuali sconti
 
@@ -102,12 +96,14 @@ if ( userAge <= 18){
     userTicketPrice = userTicketPrice - (userTicketPrice * underageSale) / 100;
 }
 
-console.log(userTicketPrice);
 
+//Arrotondo a 2 cifre decimali
+
+userTicketPrice= userTicketPrice.toFixed(2);
 
 // 9-stampo a video
 
-const message = `Il costo del tuo biglietto è ${userTicketPrice}`;
+const message = `Il costo del tuo biglietto è ${userTicketPrice} €`;
 
 ticket.innerText = message;
 
