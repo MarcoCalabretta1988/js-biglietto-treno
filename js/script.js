@@ -58,6 +58,34 @@ console.log(userKm);
 
 // 6-Chiedo all'utente gli anni e li metto in una variabile
 
-const userAge = parseInt(prompt('Quanti anni hai?', '33').trim());
+const userAge = parseInt(prompt('Quanti anni hai?', '15').trim());
 
 console.log(userAge);
+
+//VALIDAZIONE
+
+// 7-Calcolo costo
+
+let userTicketPrice = userKm * kmPrice ;
+
+console.log(userTicketPrice);
+
+// 8-Applico eventuali sconti
+
+if (userAge >= 65){
+    userTicketPrice = userTicketPrice - ( userTicketPrice * elderlySale) / 100;
+}
+
+if ( userAge <= 18){
+    userTicketPrice = userTicketPrice - (userTicketPrice * underageSale) / 100;
+}
+
+console.log(userTicketPrice);
+
+
+// 9-stampo a video
+
+const message = `Il costo del tuo biglietto è ${userTicketPrice}`;
+
+ticket.innerText = message;
+
