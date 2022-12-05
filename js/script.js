@@ -92,33 +92,32 @@ if (isValid){
 
 // 7-Calcolo costo
 
-let userTicketPrice = userKm * kmPrice ;
+const userTicketPrice = userKm * kmPrice;
 
-//BONUS STAMP
-
-nosale.innerText = `Il tuo prezzo senza sconto era: ${userTicketPrice.toFixed(2)} €`;
+console.log(userTicketPrice);
 
 // 8-Applico eventuali sconti
 
+let saleTicketPrice;
+
 if (userAge >= 65){
-    userTicketPrice = userTicketPrice - ( userTicketPrice * elderlySale) / 100;
+    saleTicketPrice = userTicketPrice - ( userTicketPrice * elderlySale) / 100;
 }
 
-if ( userAge <= 18){
-    userTicketPrice = userTicketPrice - (userTicketPrice * underageSale) / 100;
+if ( userAge < 18){
+    saleTicketPrice = userTicketPrice - (userTicketPrice * underageSale) / 100;
 }
 
-
-//Arrotondo a 2 cifre decimali
-
-userTicketPrice= userTicketPrice.toFixed(2);
 
 // 9-stampo a video
 
-const message = `Il costo finale del tuo biglietto è ${userTicketPrice} €`;
+const message = `Il costo finale del tuo biglietto è ${userTicketPrice.toFixed(2)} €`;
 
 ticket.innerText = message;
 
+//BONUS STAMP
+
+nosale.innerText = `Il tuo prezzo senza sconto era: ${saleTicketPrice.toFixed(2)} €`;
 age.innerText = ` Eta inserita: ${userAge}`;
 km.innerText = ` Km inseriti: ${userKm}`;
 
