@@ -110,13 +110,13 @@ if ( userAge < 18){
 
 // 9-stampo a video
 
-const message = `Il costo finale del tuo biglietto è ${userTicketPrice.toFixed(2)} €`;
+const message = `Il costo finale del tuo biglietto è ${saleTicketPrice.toFixed(2)} €`;
 
 ticket.innerText = message;
 
 //BONUS STAMP
 
-nosale.innerText = `Il tuo prezzo senza sconto era: ${saleTicketPrice.toFixed(2)} €`;
+nosale.innerText = `Il tuo prezzo senza sconto era: ${userTicketPrice.toFixed(2)} €`;
 age.innerText = ` Eta inserita: ${userAge}`;
 km.innerText = ` Km inseriti: ${userKm}`;
 
