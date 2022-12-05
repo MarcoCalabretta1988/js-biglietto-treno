@@ -64,6 +64,28 @@ console.log(userAge);
 
 //VALIDAZIONE
 
+let isValid = true;
+
+if (isNaN(userKm) || userKm < 1 ){
+    isValid = false;
+    alert ('Inserisci chilometraggio valido');
+}
+
+
+if (isNaN(userAge) || userAge < 1 || userAge > 120){
+    isValid = false;
+    alert ('Inserisci età valida');
+}
+
+
+
+
+
+
+
+
+if (isValid){
+
 // 7-Calcolo costo
 
 let userTicketPrice = userKm * kmPrice ;
@@ -89,3 +111,4 @@ const message = `Il costo del tuo biglietto è ${userTicketPrice}`;
 
 ticket.innerText = message;
 
+}
